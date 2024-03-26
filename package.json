@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
+    "build:dev": "npm run clean && tsc --watch",
+    "start:local": "serverless offline",
+    "start:dev": "npm run build && nodemon",
+    "dev": "concurrently \"npm run build:dev\" \"npm run start:dev\"",
+    "start": "npm run build && serverless deploy"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.136",
+    "@types/node": "^20.11.30",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "rimraf": "^3.0.2",
+    "serverless-offline": "^13.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@types/redis": "^4.0.11",
+    "class-validator": "^0.14.1",
+    "pg": "^8.11.3",
+    "redis": "^4.6.13",
+    "typeorm": "^0.3.20"
+  }
+}
